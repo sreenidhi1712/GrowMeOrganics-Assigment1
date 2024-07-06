@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import { Checkbox, Accordion, AccordionSummary, AccordionDetails, FormControlLabel } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
