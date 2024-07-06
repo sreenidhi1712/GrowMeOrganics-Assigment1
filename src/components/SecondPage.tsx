@@ -65,7 +65,7 @@ const SecondPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <h1>List of data</h1>
-      <div style={{ height: 600, width: '60%', margin: "3rem", backgroundColor: "white" }}>
+      <div style={{ height: 600, width: '60%', margin: "2rem", backgroundColor: "white" }}>
         <DataGrid 
           rows={data} 
           columns={columns} 
