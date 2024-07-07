@@ -65,7 +65,7 @@ const ExpandableList: React.FC<ExpandableListProps> = ({ data }) => {
     <div>
       {data.map(dept => (
         <Accordion key={dept.department} sx={{ marginTop: "2rem" }}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} >
             <FormControlLabel
               control={
                 <Checkbox
@@ -76,7 +76,7 @@ const ExpandableList: React.FC<ExpandableListProps> = ({ data }) => {
               label={dept.department}
             />
           </AccordionSummary>
-          <AccordionDetails sx={{ marginBottom: "5rem" }}>
+          <AccordionDetails sx={{ marginBottom: "5rem",display:"flex",flexDirection:"column" }}>
             {dept.sub_departments.map(subDept => (
               <FormControlLabel
                 key={subDept}
