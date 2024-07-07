@@ -62,7 +62,7 @@ const ExpandableList: React.FC<ExpandableListProps> = ({ data }) => {
   };
 
   return (
-    <div>
+    <div style={{marginBottom:"5vh"}}>
       {data.map(dept => (
         <Accordion key={dept.department} sx={{ marginTop: "2rem" }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} >

@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
         e.preventDefault();
         if (username && phone && email) {
             const userDetails = { username, phone, email };
-            localStorage.setItem('userDetails', JSON.stringify(userDetails));
+            sessionStorage.setItem('userDetails', JSON.stringify(userDetails));
             navigate('/second');
         } else {
             alert('Please fill in all the fields.');
@@ -27,23 +27,24 @@ const LoginPage: React.FC = () => {
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <h1>Login</h1>
+                <h1 style={{fontWeight:"600",color:"white"}}>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label>Username: </label> <br />
+                        <label style={{color:"white"}}>Username: </label> <br />
                         <input type="text" value={username} onChange={handleUsernameChange} />
                     </div>
                     <div>
-                        <label>Phone number: </label> <br />
+                        <label style={{color:"white"}}>Phone number: </label> <br />
                         <input type="text" value={phone} onChange={handlePhoneChange} />
                     </div>
                     <div>
-                        <label>Email: </label> <br />
+                        <label style={{color:"white"}}>Email: </label> <br />
                         <input type="email" value={email} onChange={handleEmailChange} />
                     </div>
-                    <Button variant="contained" type="submit" sx={{ backgroundColor: "#42A5F5", color: "white" }}>Submit</Button>
+                    <Button variant="contained" type="submit" sx={{ backgroundColor: "#052946", color: "white" ,borderRadius:"10px"}}>Submit</Button>
                 </form>
             </div>
+            <p>Kindly note the login data is stored in session storage ,once the application is closed please login again ,and cannot be redirected to login page once logged in ,if wanted to check login page please close and reopen the link</p>
         </div>
     );
 }

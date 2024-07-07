@@ -1,22 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
-import  { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Protectedroute from './Protectedroute'; 
+import Protectedroute from './Protectedroute'; // Adjust the path as per your file structure
 import SecondPage from './components/SecondPage';
 
 const App: React.FC = () => {
+  // Check if user is authenticated
+  const isAuthenticated = !!sessionStorage.getItem('userDetails');
+
   return (
-    <>
-      <Router>
+    <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
-      <Route  element={<Protectedroute />}>
-      <Route path="/second" element={<SecondPage />} />
-      </Route>
+        <Route path="/" element={isAuthenticated ? <Navigate to="/second" replace /> : <LoginPage />} />
+        <Route element={<Protectedroute />}>
+          <Route path="/second" element={<SecondPage />} />
+        </Route>
       </Routes>
-      
-      </Router>
-    </>
+    </Router>
   );
 }
 
