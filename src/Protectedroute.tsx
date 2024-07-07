@@ -4,7 +4,7 @@ import {   Navigate, Outlet } from 'react-router-dom';
 
 
 const Protectedroute: React.FC = () => {
-    const isAuthenticated = !!sessionStorage.getItem('userDetails'); // Check if user is authenticated
+    const isAuthenticated = !!localStorage.getItem('userDetails'); // Check if user is authenticated
 
     return isAuthenticated ? (
         <Outlet />

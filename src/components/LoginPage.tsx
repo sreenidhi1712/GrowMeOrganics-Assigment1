@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
         e.preventDefault();
         if (username && phone && email) {
             const userDetails = { username, phone, email };
-            sessionStorage.setItem('userDetails', JSON.stringify(userDetails));
+            localStorage.setItem('userDetails', JSON.stringify(userDetails));
             navigate('/second');
         } else {
             alert('Please fill in all the fields.');

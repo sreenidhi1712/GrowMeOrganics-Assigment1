@@ -6,7 +6,7 @@ import SecondPage from './components/SecondPage';
 
 const App: React.FC = () => {
   // Check if user is authenticated
-  const isAuthenticated = !!sessionStorage.getItem('userDetails');
+  const isAuthenticated = !!localStorage.getItem('userDetails');
 
   return (
     <Router>
